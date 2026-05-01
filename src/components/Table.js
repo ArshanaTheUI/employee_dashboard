@@ -1,0 +1,34 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+function Table() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/users")
+      .then(res => setUsers(res.data));
+  }, []);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+
+      <tbody>
+           {users.map((user) => (
+          <tr key={user.id}>
+            <td>{user.name}</td>
+            <td>{user.email}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+export default Table;
