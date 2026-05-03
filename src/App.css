@@ -3,11 +3,62 @@
 }
 
 .sidebar {
-  width: 200px;
+  width: 220px;
   background: #111;
   color: white;
   height: 100vh;
   padding: 20px;
+}
+
+.sidebar h2 {
+  margin: 0 0 24px;
+  font-size: 1.35rem;
+}
+
+.sidebar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav-item {
+  margin-bottom: 10px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: purple;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: rgba(0, 128, 128, 0.08);
+}
+
+.sidebar-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-link.active {
+  background: teal;
+  color: white;
+}
+
+.sidebar-link.active .sidebar-icon {
+  color: white;
+}
+
+.sidebar-link.active .sidebar-label {
+  color: white;
 }
 
 .main {
@@ -41,4 +92,41 @@ table {
 td, th {
   border: 1px solid #ddd;
   padding: 10px;
+}
+
+/*Button */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.primary {
+  background: #4CAF50;
+  color: white;
+}
+
+.secondary {
+  background: #ddd;
+  color: black;
+}
+
+/* Input */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

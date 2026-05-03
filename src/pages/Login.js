@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState } from "react"
+import Input from "../components/Input";
+import Button from "../components/Button";;
 function Login() {
 
 const [username, setUsername] = useState("");
@@ -15,9 +17,28 @@ const handleLogin = ()=>{
     return(
         <div>
             <h2>LoginPage</h2>
-                  <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                  {/* <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
       <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleLogin}>Login</button>
+       */}
+      
+       <Input
+        label="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter email"
+      />
+
+      <Input
+        label="Password"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Enter password"
+      />
+
+      <Button onClick={handleLogin} text="Login" type="submit" />
+      
         </div>
     )
 }
