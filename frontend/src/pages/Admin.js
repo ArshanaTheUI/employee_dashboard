@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
-
+import axios from "axios";
 function Admin() {
   const [form, setForm] = useState({
     empname: "",
@@ -18,19 +18,38 @@ function Admin() {
     });
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   // get old data
+  //   const existing = JSON.parse(localStorage.getItem("employees")) || [];
+
+  //   // add new employee
+  //   const updated = [...existing, form];
+
+  //   // save back
+  //   localStorage.setItem("employees", JSON.stringify(updated));
+
+  //   // clear form
+  //   setForm({
+  //     empname: "",
+  //     empaddress: "",
+  //     empemail: "",
+  //     empphone: "",
+  //     empdesignation: ""
+  //   });
+
+  //   alert("Employee added!");
+  // };
+
+
+    const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // get old data
-    const existing = JSON.parse(localStorage.getItem("employees")) || [];
+    await axios.post("http://localhost:5000/employees", form);
 
-    // add new employee
-    const updated = [...existing, form];
+    alert("Employee added!");
 
-    // save back
-    localStorage.setItem("employees", JSON.stringify(updated));
-
-    // clear form
     setForm({
       empname: "",
       empaddress: "",
@@ -38,10 +57,7 @@ function Admin() {
       empphone: "",
       empdesignation: ""
     });
-
-    alert("Employee added!");
   };
-
   return (
     <div>
       <h2>Add Employee</h2>
