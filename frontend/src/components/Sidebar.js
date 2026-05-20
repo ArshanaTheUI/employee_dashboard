@@ -5,8 +5,8 @@ const navItems = [
   { path: "/users", label: "Users", icon: "👥" },
   { path: "/table", label: "Table", icon: "📋" },
   { path: "/settings", label: "Settings", icon: "⚙️" },
-    { path: "/admin", label: "Admin", icon: "⚙️" },
-    { path: "/employee", label: "Employee", icon: "⚙️" },
+    { path: "/add-emp", label: "Admin", icon: "⚙️" },
+    { path: "/view-emp", label: "Employee", icon: "⚙️" },
 
 ];
 

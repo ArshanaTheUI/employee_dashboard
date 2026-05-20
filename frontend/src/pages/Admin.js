@@ -2,6 +2,11 @@ import { useState } from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import axios from "axios";
+import { createEmployee } from "../services/employeeService";
+// import {
+//   getEmployees,
+// } from "../services/employeeService";
+
 function Admin() {
   const [form, setForm] = useState({
     empname: "",
@@ -18,36 +23,13 @@ function Admin() {
     });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   // get old data
-  //   const existing = JSON.parse(localStorage.getItem("employees")) || [];
-
-  //   // add new employee
-  //   const updated = [...existing, form];
-
-  //   // save back
-  //   localStorage.setItem("employees", JSON.stringify(updated));
-
-  //   // clear form
-  //   setForm({
-  //     empname: "",
-  //     empaddress: "",
-  //     empemail: "",
-  //     empphone: "",
-  //     empdesignation: ""
-  //   });
-
-  //   alert("Employee added!");
-  // };
 
 
     const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:5000/employees", form);
-
+    // await axios.post("http://localhost:5000/api/employees", form);
+await createEmployee(form);
     alert("Employee added!");
 
     setForm({

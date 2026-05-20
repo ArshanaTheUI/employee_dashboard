@@ -22,7 +22,7 @@ const [editForm, setEditForm] = useState({
 
 
     const fetchData = async () => {
-    const res = await axios.get("http://localhost:5000/employees");
+    const res = await axios.get("http://localhost:5000/api/employees");
     setEmployees(res.data);
   };
 
@@ -45,7 +45,7 @@ const [editForm, setEditForm] = useState({
 
 
  const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/employees/${id}`);
+    await axios.delete(`http://localhost:5000/api/employees/${id}`);
     fetchData();
   };
 
@@ -86,7 +86,7 @@ const [editForm, setEditForm] = useState({
 // update
   const handleUpdate = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:5000/employees/${editId}`, editForm);
+    await axios.put(`http://localhost:5000/api/employees/${editId}`, editForm);
     setEditId(null);
     fetchData();
   };
